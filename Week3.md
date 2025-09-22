@@ -60,10 +60,110 @@
 ✅ 학습 목표 :
 * 연습문제(7문제 이상) 푼 것들 정리하기
 ~~~
+~~~
+1번 문제: NULL과 조건에 AND, OR
 
+- NULL: 존재하지 않는 값. 연산을 할 수 없는 값. ex) type2가 없다 : type2 IS NULL (반대는 IS NOT NULL)
+- AND: WHERE 조건문에서 사용. () AND () 하면, 두개의 조건이 모두 만족하는 값이 나옴
+- OR: WHERE 조건문에서 사용. () OR () 하면, 두 괄호 중 하나만 만족해도 결과값이 나옴
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+~~~
+~~~
+2번 문제: 집계함수의 조건
 
+- 집계 함수는 GROUP BY와 같이 다님. 집계하는 기준(컬럼)이 없으면 COUNT만 쓸 수 있으나, 집계하는 기준이 있다면, 그 기준을 GROUP BY에 써줘야 한다.
 
+3번 문제: ~~와 상관없이, DISTINCT
+
+- 조건에서 ~~와 상관없이라고 나오면, 조건이 아님. 그냥 수를 세면 됨
+- DISTINCT 언제 쓸까? => 조유한 값만 보고 싶을 때 사용한다, 유니크한 값만 알고 싶은 경우 => 중복이 없는 것
+~~~
+~~~
+4번 문제: GRUOP BY의 활용
+
+- GROUP BY : is_legendary가 길다. GROUP BY에 컬럼이 많을 수 있음 => GRUOP BY 1 => SELECT문의 첫번째를 의미함, ORDER BY도 가능
+~~~
+~~~
+7번 문제 (오답)
+
+<img width="284" height="96" alt="image" src="https://github.com/user-attachments/assets/a933dfbb-5c01-4e0b-837c-736e0ed29296" />
+
+테이블을 Trainer로 불러와야 했는데 Pokemon으로 불러옴
+
+- IN ("", "", ...) => OR로 일일히 묶는 것이 어렵다면, IN을 쓰고 하나로 묶으면 됨.
+~~~
+~~~
+9번 문제 (오답)
+
+<img width="182" height="56" alt="image" src="https://github.com/user-attachments/assets/34fe13a9-bb9c-4930-94c7-bace3283c713" />
+
+1. 컬럼명을 먼저 써주고, 집계할 때 id로 해줘야함
+2. GROUP BY를 해줘야함
+
+SELECT
+ generation,
+ COUNT(id) AS cnt
+FROM Basic.Pokemon
+GROUP BY 
+  generation
+
+  가 정답.
+~~~
+~~~
+11번 문제: LIMIT
+
+  - 내가 보고 싶은 가장 상단의 열만 보고 싶을 경우, LIMIT 1을 해주면 됨
+~~~
+~~~
+13번 문제: LIKE
+
+- 컬럼 LIKE "특정단어%". %는 앞에도, 뒤에도 붙을 수 있음.
+- "%파" = 파로 끝나는 단어, "파%" = 파로 시작하는 단어. "%파%" = 파가 들어간 단어
+- 문자열 컬럼에서 특정 단어가 포함되어 있는지 알고 싶은 경우엔 LIKE를 사용하면 편함
+~~~
+~~~
+14번 문제: 의문
+
+- GROUP BY trainer_cnt를 했을 때 왜 오류가 나는가.. 6개, 7개, 8개인 트레이너 별로 그룹화되는 것이 아닌가??
+~~~
+~~~
+15번 문제: 오답
+
+- 풀이:
+  
+-- 테이블: Trainer_Pokemon
+-- 조건: 없음
+-- 컬럼: trainer_id
+-- 집계: 포켓몬의 수 => COUNT
+
+SELECT
+  trainer_id,
+  COUNT(Pokemon_id) AS Pokemon_cnt
+FROM Basic.Trainer_Pokemon
+GROUP BY 
+  trainer_id
+~~~
+~~~
+17번 문제: 오답
+
+-- 테이블: Trainer_Pokemon
+-- 조건: 풀어준 포켓몬/전체 포켓몬 >= 20%
+-- 컬럼: trainer_id
+-- 집계: COUNTIF
+
+-- COUNTIF(조건) : COUNTIF(컬럼 = "3") => WHERE 조건을 걸면서 COUNT를 해주는 것. 특정 컬럼 상태를 나타낼 수 있다.
+
+SELECT
+  trainer_id,
+  COUNTIF(status = "Released") AS released_cnt, # 풀어준 포켓몬의 수
+  COUNT(pokemon_id) AS pokemon_cnt,
+  COUNTIF(status = "Released")/COUNT(pokemon_id) AS released_ratio # /를 통해 나누기 적용
+FROM Basic.Trainer_Pokemon
+GROUP BY
+  trainer_id
+HAVING
+  released_ratio >= 0.2 # COUNIF도 집계 함수이기 때문에 HAVING으로 조건을 걸어줘야함.
+~~~
 
 ## 2-8. 새로운 집계함수
 
