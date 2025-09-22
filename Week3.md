@@ -279,7 +279,7 @@ ORDER BY (ㄱ) (ㄷ);
 
 
 ~~~
-(ㄱ) = COUNT(id) AS pokemo_cnt
+(ㄱ) = COUNT(id) AS pokemon_cnt
 (ㄴ) = GROUP BY
 (ㄷ) = DESC
 ~~~
