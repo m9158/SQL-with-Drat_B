@@ -65,7 +65,7 @@
 2. 오류 메세지를 보고 디버깅해보기
 
 
-2-1. 
+**2-1.**
 <img width="1336" height="276" alt="image" src="https://github.com/user-attachments/assets/3d6e3943-cde3-4e34-aa61-ad692b5ce1b2" />
 ~~~
 해석 : 집계 함수 COUNT의 인자 수가 일치하지 않습니다.
@@ -75,7 +75,7 @@
 
 
 
-2-2. 
+**2-2.**
 <img width="1789" height="430" alt="image" src="https://github.com/user-attachments/assets/0dd8b49e-e71d-4368-ab97-f6327e9fe317" />
 ~~~
 해석 : SELECT 목록 식은 다음에서 그룹화하거나 집계되지 않은 열을 참조합니다.
@@ -83,7 +83,7 @@
 => GROUP BY에 적절한 컬럼을 명시하지 않았을 경우 발생하는 오류
 ~~~
 
-2-3.
+**2-3.**
 <img width="1802" height="649" alt="image" src="https://github.com/user-attachments/assets/e43bcf82-df9d-4009-ae96-486db474795b" />
 ~~~
 해석: [8:1] = [줄:칸], 입력이 끝날 것으로 예상되었지만 SELECT 키워드가 입력되었습니다.
@@ -93,7 +93,7 @@
    - 혹은 쿼리가 끝나는 부분에 ; 을 붙이고 실행할 부분만 드래그 앤 드랍해서 실행하기
 ~~~
 
-2.4
+**2.4**
 <img width="1834" height="525" alt="image" src="https://github.com/user-attachments/assets/b66f85c8-176b-404e-84e1-2ba92d429b84" />
 ~~~
 해석: 입력이 끝날 것으로 예상되었지만 [5:1]에서 키워드 WHERE을 얻었습니다.
@@ -101,7 +101,7 @@
 => LIMIT 10을 맨 아래로 옮기거나 삭제를 해준다
 ~~~
 
-2-5.
+**2-5.**
 <img width="1451" height="616" alt="image" src="https://github.com/user-attachments/assets/1c7af8aa-db38-494a-8de0-fe38d48a4448" />
 ~~~
 해석: ")"가 예상되지만 [8:11]에 스크립트가 끝났습니다.
@@ -119,6 +119,31 @@
 * 데이터 타입의 종류를 설명할 수 있다. 
 * 데이터 타입을 변환하는 방법을 설명할 수 있다. 
 ~~~
+1. 데이터 타입의 종류
+
+   - 숫자 ex) 1, 2, 3.14
+   - 문자 ex) "나", "데이터"
+   - 시간, 날짜 ex) 2024-01-01, 2024-01-01 23:59:10
+   - 부울(Bool) ex) 참/거짓 ex) WHERE 조건 -> TRUE
+   - Json, ARRAY 등..
+  
+2. 데이터 타입을 변환하는 방법
+
+   2-1. 자료 타입 변경하기
+      - 자료 타입을 변경하는 함수 => CAST
+      - ex) SELECT
+             CAST(1 AS STRING) "숫자 1을 문자 1로 변경"
+   
+      2-1-1. 안전하게 데이터 타입 변경하기 => SAFE_CAST
+            - 문자를 숫자로 바꾸는 식의 변환에 실패할 시도를 할 경우, 단순 오류가 아닌 NULL로 반환한다.
+
+   2-2. 수학 함수
+
+<img width="608" height="444" alt="image" src="https://github.com/user-attachments/assets/58379daa-f708-4806-845e-94615edf7a5e" />
+
+- Tip) 나누기를 할 경우 x/y 대신 SAFE_DIVIDE 함수 사용하기
+-  x, y.중 하나라도 0인 경우 그냥 나누면 zero error가 발생
+- SAFE_DIVIDE(x, y) 
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 
@@ -130,7 +155,57 @@
 ✅ 학습 목표 :
 * 문자열 함수들의 종류를 이해하고 어떠한 상황에서 사용하는지 설명할 수 있다. 
 ~~~
+**<문자열 함수들의 종류>**
+~~~
+1. CONCAT
+   - CONCAT(컬럼1, 컬럼2, ...)
 
+   - 쿼리 예시
+   - SELECT
+       CONCAT("안녕", "하세요", "!") AS result
+
+     => "안녕하세요"
+~~~
+~~~
+2. SPLIT
+  - SPLIT(문자열 원본, 나눌 기준이 되는 문자)
+
+  - 쿼리 예시
+  - SELECT
+      SPLIT("가, 나, 다, 라", ", ") AS result
+
+    => "가", "나", "다", "라" (배열(ARRAY))
+~~~
+~~~
+3. REPLACE
+   - REPLACE(문자열 원본, 찾을 단어, 바꿀 단어)
+
+   - 쿼리 예시
+   - SELECT
+      REPLACE("안녕하세요", "안녕", "실천") AS result
+
+   => "실천하세요"
+~~~
+~~~
+4. TRIM
+   - TRIM(문자열 원본, 자를 단어)
+
+   - 쿼리 예시
+   - SELECT
+      TRIM("안녕하세요","하세요") AS result
+
+   => "안녕"
+~~~
+~~~
+5. UPPER
+   - UPPER(문자열 원본)
+
+   - 쿼리 예시
+   - SELECT
+      UPPER("abc") AS result
+
+   => "AB"
+~~~
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 
 
@@ -144,6 +219,53 @@
 * 시간함수들의 종류와 시간의 차이를 추출하는 방법을 설명할 수 있다. 
 ~~~
 
+1. 날짜 및 시간 데이터 타입
+
+   1-1. DATE, DATETIME
+      - DATE: DATE만 표시하는 데이터 ex) 2023-12-31
+      - DATETIME: DATE와 TIME까지 표시하는 데이터, Time Zone 정보 없음. ex)  2023-12-31 14:00:00
+
+   1-2. 타임존
+      - GMT: Green Mean Time(한국 시간: GMT +9)
+        => 영국의 그리니치 천문대를 기준으로 지역에 따른 시간의 차이르 조정하기 위해 생긴 시간의 구분선
+        
+      - UTC: Universal Time Coordinated(한국 시간: UTC +9)
+      - 타임존이 존재한다 = 특정 지역의 표준 시간대
+        => 국제적인 표준 시간, 협정 세계시.
+
+   1-3. TIMESTAMP
+      - 시간 도장
+      - UTC부터 경과한 시간을 나타내는 값
+      - TIME ZONE 정보 있음
+      - ex) 2023-12-31 14:00:00 UTC
+  
+   1-4. millisecond, microsecond
+      - millisecond
+           - 시간의 단위, 천 분의 1초(1,000ms = 1초)
+           - 우리가 아는 초보다 더 짧은 시간 단위
+           - 눈을 깜빡이는 시간이 약 100ms
+           - 빠른 반응이 필요한 분야에서 사용(초보다 더 정확하게)
+           - Millisecond => TIMESTAMP => DATETIME으로 변경해서 사용
+       
+        - microsecond(us)
+             - 1/1,000ms, 1/1,000,000초
+
+2. 시간 함수 적용 
+   
+- 예시: 1704176819711ms -> 2024-01-02 15:26:59(DATETIME) + 타임존 추가(Asia/Seoul)
+  
+         <img width="872" height="294" alt="image" src="https://github.com/user-attachments/assets/386b0d4a-92c7-4dfa-8987-93b226a8dcbe" />
+
+
+- TIMESTAMP_MILLIS => TIMESTAMP를 MILLISECOND로 표현한 것
+- TIMESTAMP_MICROS => TIMSESTAMP를 MICROSECOND로 표현한 것
+- DATETIME(TIMESTAMP_MICROS(~~~~), 타임존(Asia/Seoul) => TIMSTAMP를 DATETIME으로 바꾸는 함수
+
+3. TIMESTAMP와 DATETIME의 차이
+
+<img width="782" height="299" alt="image" src="https://github.com/user-attachments/assets/fa06282f-8140-41da-bae5-28d161d1bf26" />
+
+   
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 
 
@@ -153,6 +275,9 @@
 <br>
 
 ---
+
+<img width="392" height="552" alt="image" src="https://github.com/user-attachments/assets/ddaf4d55-372f-4cbb-90ad-24b15119b967" />
+
 
 # 2️⃣ 확인문제 & 문제 인증
 
