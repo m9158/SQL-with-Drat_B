@@ -64,46 +64,46 @@
 
 2. 오류 메세지를 보고 디버깅해보기
 
-~~~
+
 2-1. 
 <img width="1336" height="276" alt="image" src="https://github.com/user-attachments/assets/3d6e3943-cde3-4e34-aa61-ad692b5ce1b2" />
-
+~~~
 해석 : 집계 함수 COUNT의 인자 수가 일치하지 않습니다.
 
 => COUNT() 괄호 안에는 여러가지의 인자가 들어가면 안된다. 오직 하나만 가능
+~~~
 
 
-~~~
-~~~
+
 2-2. 
 <img width="1789" height="430" alt="image" src="https://github.com/user-attachments/assets/0dd8b49e-e71d-4368-ab97-f6327e9fe317" />
-
+~~~
 해석 : SELECT 목록 식은 다음에서 그룹화하거나 집계되지 않은 열을 참조합니다.
 
 => GROUP BY에 적절한 컬럼을 명시하지 않았을 경우 발생하는 오류
 ~~~
-~~~
+
 2-3.
 <img width="1802" height="649" alt="image" src="https://github.com/user-attachments/assets/e43bcf82-df9d-4009-ae96-486db474795b" />
-
+~~~
 해석: [8:1] = [줄:칸], 입력이 끝날 것으로 예상되었지만 SELECT 키워드가 입력되었습니다.
 
 => - SELECT 근처 확인하기
    - 하나의 쿼리엔 SELECT가 1개만 있어야 함
    - 혹은 쿼리가 끝나는 부분에 ; 을 붙이고 실행할 부분만 드래그 앤 드랍해서 실행하기
 ~~~
-~~~
+
 2.4
 <img width="1834" height="525" alt="image" src="https://github.com/user-attachments/assets/b66f85c8-176b-404e-84e1-2ba92d429b84" />
-
+~~~
 해석: 입력이 끝날 것으로 예상되었지만 [5:1]에서 키워드 WHERE을 얻었습니다.
 
 => LIMIT 10을 맨 아래로 옮기거나 삭제를 해준다
 ~~~
-~~~
+
 2-5.
 <img width="1451" height="616" alt="image" src="https://github.com/user-attachments/assets/1c7af8aa-db38-494a-8de0-fe38d48a4448" />
-
+~~~
 해석: ")"가 예상되지만 [8:11]에 스크립트가 끝났습니다.
 
 => 괄호를 작성하지 않은 경우이므로, 괄호를 작성한다.
