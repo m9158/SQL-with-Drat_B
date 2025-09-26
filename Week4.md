@@ -254,7 +254,7 @@
    
 - 예시: 1704176819711ms -> 2024-01-02 15:26:59(DATETIME) + 타임존 추가(Asia/Seoul)
   
-         <img width="872" height="294" alt="image" src="https://github.com/user-attachments/assets/386b0d4a-92c7-4dfa-8987-93b226a8dcbe" />
+<img width="872" height="294" alt="image" src="https://github.com/user-attachments/assets/386b0d4a-92c7-4dfa-8987-93b226a8dcbe" />
 
 
 - TIMESTAMP_MILLIS => TIMESTAMP를 MILLISECOND로 표현한 것
