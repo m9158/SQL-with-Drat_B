@@ -57,7 +57,30 @@
 * 날짜 및 시간 데이터에 대해서 더 자세히 설명할 수 있다. 
 * CURRENT_TIME, EXTRACT, DATETIME_TRUNC, PARSE_DATETIME, FROMAT_DATETIME 을 설명할 수 있다. 
 ~~~
+1. DATETIME 함수
 
+ 2-1. CURRENT_TIME([time_zone)]
+    - 현재 DATETIME 출력
+
+  2-2. EXTRACT: DATETIME에서 특정 부분만 추출하고 싶은 경우
+    - EX) 2024-01-02 14:00:00에서 연도, 월, 일 에서 원하는 데이터를 뽑아내는 것.
+    - 일자별 주문, 월별 주문 확인하고 싶은 경우.
+  
+  2-3. DATETIMe_TRUNC: DATE와 HOUR만 남기고 싶은 경우 => 시간 자르기
+    - DATETIME_TRUNC(datetime_col, HOUR)
+    - "2024-01-02 14:42:13"을 HOUR로 자르면 -> "2024-01-02 14:00:00"
+  
+  2-4. PARSE_DATETIME
+    - 문자열로 저장된 DATETIME을 DATETIME 타입으로 바구고 싶은 경우
+    - PRASE_DATETIME('문자열의 형태', 'DATETIME 문자열') AS datetime
+   <img width="879" height="258" alt="image" src="https://github.com/user-attachments/assets/bba86cc2-e994-4f77-bf37-d15422cedc92" />
+
+  2-5. FORMAT_DATETIME
+    - DATETIME 타입 데이터를 특정 형태의 문자열 데이터로 변환하고 싶은 경우
+    <img width="822" height="81" alt="image" src="https://github.com/user-attachments/assets/0a51a96d-e978-410d-9e89-43b667b6e0bf" />
+
+
+     
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 
 
@@ -79,9 +102,26 @@
 ✅ 학습 목표 :
 * 4-5, 4-7 각각에서 두 문제 이상 (최소 4문제) 푼 내용 정리하기
 ~~~
+**<시간 데이터 연습 문제>**
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+~~~
+1번 문제: 데이터의 특징을 꼭 직접 파악하고 넘어가기
 
+- catch_date : DATE  타입
+- catch_datetime: UTC, TIMESTAMP 타입 => 컬럼의 이름은 datetime인데 TIMESTAMP으로 저장되어 있음
+- 컬럼의 이름만 믿고 바로 쿼리를 시작하는 것이 아니라, 꼭 이렇게 데이터를 확인해야함
+- catch_date => KR? UTC? 어떤 기준??
+- catch_date 칼럼 catc_datetime 컬럼을 비교 => DATETIME(catch_datetime, "Asia/Seoul")
+- catch_date != DATE(DATETIME(catch_datetime, "Asia/Seoul")) => 있다면 catch_date는 사용하기 어려움
+~~~
+
+~~~
+2번 문제: 오답
+
+- 먼저 battle_date는 battle_datetime을 기반으로 만들어진 DATE임을 확인
+- 그러나 battle_datetime, battle_timestamp 를 검증 해야함 -> 서로 같음을 확인
+- EXTRACT 와 HOUR를 사용하여 그 사이의 시간을 구해야함. HOUR을 사용 못함
+~~~
 
 
 <br>
