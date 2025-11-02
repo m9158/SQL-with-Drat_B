@@ -232,7 +232,8 @@ SELECT
 <!-- 틀린쿼리에 대한 오류의 원인도 같이 작성해주세요. 문제에서 제공된 login_data 컬럼은 DATE type의 데이터를 가지고 있다고 가정하시면 됩니다. -->
 
 ~~~
-여기에 답을 작성해주세요!
+3번 쿼리: login_date가 DATE 타입인 반면, '2021'은 STRING 타입이다. 따라서 두개의 타입간의 비교가 불가능 하다.
+4번 쿼리: 이것 또한 '2021-01-01' AND '2021-12-31'가 STRING 타입이므로, DATE 타입과의 불일치로 비교가 불가능 하다.
 ~~~
 
 
@@ -263,7 +264,7 @@ FROM pokemon;
 <!-- 근거와 함께 답을 작성해주세요 -->
 
 ~~~
-여기에 답을 작성해주세요!
+Pikachu와 Bulbasaur이다. ELSE는 'Normal'을 출력하는데,  Electric, Grass는 ( Fire' THEN 'Hot', 'Water' THEN 'Cool' )에 해당하지 않기 때문에 ELSE에 따라 Normal이 된다.
 ~~~
 
 
