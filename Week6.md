@@ -76,21 +76,24 @@
 * 각 JOIN 방법들의 차이점에 대해서 설명할 수 있다. 
 ~~~
 
-<기존 테이블>
+**<기존 테이블>**
+
+
 <img width="247" height="214" alt="image" src="https://github.com/user-attachments/assets/5e4ba15f-3287-46e3-9e2c-7c1b2ef0011b" />
 
 
-
+~~~
 1. (INNER) JOIN
    - 두 테이블의 공통 요소만 연결 
+~~~
 
 <img width="322" height="113" alt="image" src="https://github.com/user-attachments/assets/361f162a-38d0-4565-a2bb-653a797e1e5f" />
 
 
-
+~~~
 2. LEFT/RIGHT (OUTER) JOIN
    - 왼쪽/오른쪽 테이블 기준으로 연결
-
+~~~
 
 <img width="456" height="131" alt="image" src="https://github.com/user-attachments/assets/3b1d3b2a-61ea-401e-b014-49c74dccbece" />
 ~~~
@@ -101,15 +104,17 @@ LEFT JOIN
 ~~~
 RIGHT JOIN
 ~~~
-
+~~~
 3. FULL (OUTER) JOIN
    - 양쪽 기준으로 연결
+~~~
 
 <img width="469" height="156" alt="image" src="https://github.com/user-attachments/assets/9a5ac557-6e6d-46e0-ae3c-d1ac741a8059" />
 
-
+~~~
 4. CROSS JOIN
    - 두 테이블의 각각의 요소를 곱하기
+~~~
 
 <img width="196" height="431" alt="image" src="https://github.com/user-attachments/assets/6628880b-033b-4f2f-b54a-14f549c4b99a" />
 
