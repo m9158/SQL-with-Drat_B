@@ -104,12 +104,16 @@ LEFT JOIN
 ~~~
 RIGHT JOIN
 ~~~
+
+
+
 ~~~
 3. FULL (OUTER) JOIN
    - 양쪽 기준으로 연결
 ~~~
 
 <img width="469" height="156" alt="image" src="https://github.com/user-attachments/assets/9a5ac557-6e6d-46e0-ae3c-d1ac741a8059" />
+
 
 ~~~
 4. CROSS JOIN
