@@ -100,18 +100,6 @@
 <img width="456" height="131" alt="image" src="https://github.com/user-attachments/assets/3b1d3b2a-61ea-401e-b014-49c74dccbece" />      <img width="305" height="127" alt="image" src="https://github.com/user-attachments/assets/4c309f0a-8b47-4159-aff3-e1b776cfb4ed" />
 
 
-~~~
-RIGHT JOIN
-~~~
-
-
-
-~~~
-LEFT JOIN
-~~~
-
-
-
 
 
 ~~~
