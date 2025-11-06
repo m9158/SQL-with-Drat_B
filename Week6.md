@@ -195,6 +195,9 @@ https://school.programmers.co.kr/learn/courses/30/lessons/164673
 
 > 조건에 부합하는 중고거래 댓글 조회하기 (JOIN)
 
+<img width="1890" height="902" alt="image" src="https://github.com/user-attachments/assets/32c300c7-93e6-4613-9ea7-19d1453f93d2" />
+
+
 https://school.programmers.co.kr/learn/courses/30/lessons/144854
 
 > 조건에 맞는 도서와 저자 리스트 출력하기 (JOIN)
