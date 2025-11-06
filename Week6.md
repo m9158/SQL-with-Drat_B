@@ -81,7 +81,7 @@
 
 <img width="247" height="214" alt="image" src="https://github.com/user-attachments/assets/5e4ba15f-3287-46e3-9e2c-7c1b2ef0011b" />
 
-- DATE 데이터는 초단위까지 기록되기 때문에 원하는 형식으로 정리하기 위해 DATE_FORMAT을 사용해야함.
+
 ~~~
 1. (INNER) JOIN
    - 두 테이블의 공통 요소만 연결 
@@ -197,7 +197,9 @@ https://school.programmers.co.kr/learn/courses/30/lessons/164673
 
 <img width="1890" height="902" alt="image" src="https://github.com/user-attachments/assets/32c300c7-93e6-4613-9ea7-19d1453f93d2" />
 
+- DATE 데이터는 초단위까지 기록되기 때문에 원하는 형식으로 정리하기 위해 DATE_FORMAT을 사용해야함.
 
+  
 https://school.programmers.co.kr/learn/courses/30/lessons/144854
 
 > 조건에 맞는 도서와 저자 리스트 출력하기 (JOIN)
