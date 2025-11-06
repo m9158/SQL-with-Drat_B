@@ -196,13 +196,21 @@ https://school.programmers.co.kr/learn/courses/30/lessons/164673
 > 조건에 부합하는 중고거래 댓글 조회하기 (JOIN)
 
 <img width="1890" height="902" alt="image" src="https://github.com/user-attachments/assets/32c300c7-93e6-4613-9ea7-19d1453f93d2" />
-
+~~~
 - DATE 데이터는 초단위까지 기록되기 때문에 원하는 형식으로 정리하기 위해 DATE_FORMAT을 사용해야함.
-
+~~~
   
 https://school.programmers.co.kr/learn/courses/30/lessons/144854
 
+
 > 조건에 맞는 도서와 저자 리스트 출력하기 (JOIN)
+
+<img width="1920" height="903" alt="image" src="https://github.com/user-attachments/assets/d0fed583-c56e-486f-afb0-ae2e2f8abd62" />
+~~~
+- 1번 문제와 마찬가지로 DATE_FORMAT 사용해야함
+- WHERE 조건에 필요한것도 아닌데, DATE_FORMAT을 사용해야한다. 그저 보기 위해서도...
++ 그렇다면, 일단 DATE 데이터를 일자까지만 보고 싶다면, DATE_FORMAT을 무조건 써야하는건가..?
+~~~
 
 <!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. --> 
 
