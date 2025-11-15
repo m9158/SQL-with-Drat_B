@@ -274,6 +274,29 @@ https://school.programmers.co.kr/learn/courses/30/lessons/59043
 > 있었는데요 없었습니다.
 
 
+<img width="1920" height="906" alt="image" src="https://github.com/user-attachments/assets/f8b9e2ae-8c08-4bc7-a2c9-6412c42ef6e5" />
+
+
+
+~~~
+3번 문제: 정답
+
+답:
+SELECT
+ I.ANIMAL_ID,
+ I.NAME
+FROM ANIMAL_INS AS I
+LEFT JOIN ANIMAL_OUTS AS O
+ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE
+ I.DATETIME > O.DATETIME
+ORDER BY
+ I.DATETIME ASC;
+
+- 날짜가 빠르다? -> 많다 크다?? 의 개념이 헷갈렸음
+- 늘 틀리는 것 => SELECT와 FROM 사이에 조인을 했을 경우 어떤 조인의 컬럼을 불러올것인지 명시해줘야함
+~~~
+
 
 ## LeetCode 문제
 
