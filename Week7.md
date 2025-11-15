@@ -252,6 +252,23 @@ https://school.programmers.co.kr/learn/courses/30/lessons/59044
 
 > 오랜 기간 보호한 동물(1) 
 
+
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/14bf168e-e8b5-415f-aa01-5f5774df0a69" />
+
+
+~~~
+2번 문제: 오답
+
+- LEFT JOIN을 통해 ANIMAL_OUTS의 값이 NULL일 경우 입양이 되지 않는 조건일 것이라는 생각은 함
+- 그러나 이를 어떻게 해야할지 몰랐음.
+- LEFT JOIN을 한후 그냥 WHERE절에 ANIMAL_OUTS의 JOIN 키의 값이 NULL이면 됨.
+- 그러나 어떤 것이 NULL이라고 해야할지 몰랐음
+- 이후 DATETIME의 순서를 조건을 걸어서 하려고함
+- 그냥 ASC를 통해 LIMIT 3을 걸면 됨.
+~~~
+
+
+
 https://school.programmers.co.kr/learn/courses/30/lessons/59043
 
 > 있었는데요 없었습니다.
