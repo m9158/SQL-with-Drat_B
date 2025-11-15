@@ -348,7 +348,23 @@ where u.region= 'Busan'			order by o.OrderID
 
 
 ~~~
-여기에 답을 작성해주세요.
+SELECT
+  u.name, 
+  o.OrderID,
+  p.ProductName,
+  od.Quantity,
+  od.UnitPrice 	
+FROM Users AS u	
+JOIN Orders AS o 
+ON u.id = o.userId
+JOIN OrderDetails AS od 
+ON o.OrderID = od.orderID	
+JOIN Products AS p 
+ON od.ProductID = p.ProductID
+WHERE 
+  u.region= 'Busan'			
+ORDER BY
+  o.OrderID
 ~~~
 
 
