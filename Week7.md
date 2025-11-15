@@ -304,12 +304,26 @@ https://leetcode.com/problems/combine-two-tables/description/
 
 > 175. Combine Two Tables
 
+<img width="917" height="709" alt="image" src="https://github.com/user-attachments/assets/f93ee333-cc45-4697-8978-2ceecf2ec4c6" />
+
+
+
+
 https://leetcode.com/problems/list-the-products-ordered-in-a-period/
 
 > 1327. List the Products Ordered in a Period
 
+<img width="861" height="776" alt="image" src="https://github.com/user-attachments/assets/e3160221-2e83-434a-8cf9-46492eaddeb8" />
 
 
+~~~
+2번 문제: 오답
+
+- unit이 100이상이라는게 무슨말인지 이해를 못함
+- total unit이 100이상이라는 것이니까 HAVING을 통해 전체 조건을 걸고 unit >= 100 이라고 하면 됨.
+- 2020 2월을 어떻게 조건을 걸어야할지 막힘.. 항상 DATE만 들어가도 뇌가 멈추는 듯..
+- WHERE절을 o.order_date >= '2020-02-01' AND o.order_date < '2020-03-01' 이런식으로 걸어주면 끝
+~~~
 <!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. --> 
 
 
