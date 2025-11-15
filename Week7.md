@@ -235,6 +235,19 @@ https://school.programmers.co.kr/learn/courses/30/lessons/157343
 
 > 특정 옵션이 포함된 자동차 리스트 구하기
 
+<img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/ce5f473d-764b-46df-b050-0c0412aa770e" />
+
+
+~~~
+1번 문제: 오답
+
+- WHERE 절에 OPTIONS = '네비게이션' 만 함
+- 이럴 경우 오직 네비게이션만 옵션으로 갖고 있는 데이터만 출력이 됨.
+- LIKE '%네비게이션% 을 WHEHE 절에 걸어줘서 앞, 가운데, 뒤에 네비게이션이 들어가는 경우를 모두 찾아줘야함
+- 콤마로 구분된 키워드 리스트 이기 때문에
+~~~
+
+
 https://school.programmers.co.kr/learn/courses/30/lessons/59044
 
 > 오랜 기간 보호한 동물(1) 
